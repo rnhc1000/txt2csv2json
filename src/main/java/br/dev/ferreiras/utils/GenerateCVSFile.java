@@ -5,6 +5,7 @@ import org.json.JSONObject;
 
 import java.io.*;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.*;
 
 public class GenerateCVSFile {
@@ -72,7 +73,7 @@ public class GenerateCVSFile {
 //        sb.append("id,").append("url,").append("serial,").append("created_at,").append("status");
 //        sortedList.add(sb);
         for (String sites : blockedSites) {
-          sb = new StringBuilder(sites.concat("," + serial + "," + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()) + "," + "ativo"));
+          sb = new StringBuilder(sites.concat("," + serial + "," + LocalDateTime.now() + "," + "ativo"));
           sb.insert(0, count + ",");
           sortedList.add(sb);
           count++;
